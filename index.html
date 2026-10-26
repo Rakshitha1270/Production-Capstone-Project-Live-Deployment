@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capstone Catalog</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="logo">CC</span> Capstone Catalog</a>
+  <div id="accountArea"><button class="btn outline" id="loginOpen">Login</button> <button class="btn" id="registerOpen">Register</button></div>
+</header>
+<main class="container">
+  <section class="hero">
+    <div><p class="eyebrow">PRODUCTION CAPSTONE PROJECT</p><h1>Manage your catalog<br><span>beautifully.</span></h1>
+    <p class="muted">A responsive catalog app with demo authentication, CRUD operations, search, and browser-based persistence.</p></div>
+    <div class="stat"><span>▦</span><strong id="itemCount">0</strong><small>Catalog items</small></div>
+  </section>
+  <section class="toolbar"><div><h2>Catalog</h2><p class="muted small">Add, search, edit, and remove items.</p></div><button class="btn" id="addOpen">＋ Add item</button></section>
+  <label class="search">⌕ <input id="search" placeholder="Search by name, category, or description..." aria-label="Search catalog"></label>
+  <p id="notice" class="notice" role="status"></p>
+  <section id="catalog" class="grid"></section>
+  <section id="empty" class="empty hidden"><div class="empty-icon">▧</div><h3>No items found</h3><p>Try another search or add your first catalog item.</p><button class="btn" id="emptyAdd">Add first item</button></section>
+  <footer>Full Stack Web Development Capstone · Demo data is saved in this browser.</footer>
+</main>
+<dialog id="authDialog"><form id="authForm" class="dialog-form">
+  <button type="button" class="close" data-close="authDialog">×</button><p class="eyebrow">YOUR WORKSPACE</p><h2 id="authTitle">Welcome back</h2><p class="muted small" id="authHelp">Login to personalize your session.</p>
+  <label id="nameLabel">Name<input id="authName" autocomplete="name" placeholder="Your name"></label>
+  <label>Email<input id="authEmail" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+  <label>Password<input id="authPassword" type="password" required minlength="4" autocomplete="current-password" placeholder="At least 4 characters"></label>
+  <button class="btn full" type="submit" id="authSubmit">Login</button><p class="muted tiny">Demo only: credentials are not sent to a server. Do not use a real password.</p>
+</form></dialog>
+<dialog id="itemDialog"><form id="itemForm" class="dialog-form">
+  <button type="button" class="close" data-close="itemDialog">×</button><p class="eyebrow">CATALOG MANAGEMENT</p><h2 id="itemTitle">Add item</h2><input type="hidden" id="itemId">
+  <label>Item name<input id="itemName" required maxlength="70" placeholder="e.g. Wireless Headphones"></label>
+  <label>Category<input id="itemCategory" required maxlength="40" placeholder="e.g. Electronics"></label>
+  <label>Price (₹)<input id="itemPrice" type="number" min="0" step="0.01" required placeholder="1999"></label>
+  <label>Description<textarea id="itemDescription" maxlength="240" rows="3" placeholder="A short description"></textarea></label>
+  <button class="btn full" type="submit">Save item</button>
+</form></dialog>
+<script src="script.js"></script>
+</body></html>
